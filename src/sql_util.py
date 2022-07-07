@@ -1,5 +1,4 @@
-"""Creates, ingests data into, and enables querying of a table of
- songs for the PennyLane app to query from and display results to the user."""
+"""Interaction with rds"""
 import logging.config
 import typing
 from random import randint
@@ -227,14 +226,13 @@ class RecordManager:
 
 
 def create_db(engine_string: str) -> None:
-    """Create database with Tracks() data model from provided engine string.
+    """Create database with data model from provided engine string.
 
     Args:
         engine_string (str): SQLAlchemy engine string specifying which database
             to write to
 
     Returns: None
-
     """
     engine = sqlalchemy.create_engine(engine_string)
     try:
