@@ -30,7 +30,7 @@ logger.debug(
 # Initialize the database session
 record_manager = RecordManager(app)
 
-# record_manager = RecordManager(app.config["SQLALCHEMY_DATABASE_URI"])
+# Load models into memory
 encoder = joblib.load('models/encoder.joblib')
 model = joblib.load('models/model.joblib')
 
