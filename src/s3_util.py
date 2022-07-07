@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 def parse_s3(s3path: str) -> typing.Tuple[str, str]:
-    """Passe the s3 bucket name and the s3 path from a full s3 path"""
+    """Passes the s3 bucket name and the s3 path from a full s3 path"""
     regex = r's3://([\w._-]+)/([\w./_-]+)'
 
     mat = re.match(regex, s3path)
