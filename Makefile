@@ -54,7 +54,7 @@ data/download/flight_data.csv: run_s3.py
 		final-project run_s3.py --download
 acquire-data: data/download/flight_data.csv
 
-data/clean/clean_data.csv: data/raw/flight_data.csv config/model_config.yaml
+data/clean/clean_data.csv: data/download/flight_data.csv config/model_config.yaml
 	docker run --mount type=bind,source="$(shell pwd)",target=/app/ final-project run.py preprocess
 preprocess: data/clean/clean_data.csv
 
