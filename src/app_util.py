@@ -32,7 +32,7 @@ def count_down(start_row: list, days_index: int = 7) -> np.array:
     return np.array(full_matrix)
 
 
-def time_of_day(time: str):
+def time_of_day(time: str) -> str:
     """Parse hour from input str and output time of day"""
     # Get hour from a time str and convert to int
     try:
