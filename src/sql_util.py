@@ -247,13 +247,3 @@ def create_db(engine_string: str) -> None:
         raise e
     else:
         logger.info("The tables `user_records` and `model_outputs` are successfully created in the database.")
-
-
-if __name__ == '__main__':
-    # create_db('sqlite:///data/flight.dbd')
-    engine = sqlalchemy.create_engine('mysql+pymysql://msia423instructor:rzx9163@nw-msia423-rzx9163.ctarvegaqgdp.us-east-1.rds.amazonaws.com:3306/flight_db')
-    session_maker = sqlalchemy.orm.sessionmaker(bind=engine)
-    session = session_maker()
-    result = session.query(ModelOutputs).all()
-    for i in result:
-        print(i.record_id)
