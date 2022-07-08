@@ -148,6 +148,22 @@ make image-test
 + The `make image-app` will produce a Docker image called `final-project-app`, which are used to launch the flask app. 
 + The `make image-test` will produce a Docker image called `final-project-tests`, which are used to run the test 
 
+### Clean Dockers
+To stop all running containers
+```bash
+docker stop $(docker ps -aq)
+```
+
+To remove all containers
+```bash
+docker rm $(docker ps -aq)
+```
+
+To remove all images
+```bash
+docker rmi $(docker images -q)
+```
+
 ## Model
 ### Run Entire Pipeline
 After building the images, you can run the entire model pipeline using the following command
