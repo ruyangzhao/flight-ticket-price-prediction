@@ -221,7 +221,7 @@ The three `///` denote that it is a relative path to where the code is being run
 You can also define the absolute path with four `////`, for example:
 
 ```python
-'sqlite://///Users/cmawer/Repos/2022-msia423-template-repository/data/tracks.db'
+'sqlite://///Users/alex/Repos/flight-ticket-price-prediction/data/flight.db'
 ```
 
 If no `SQLALCHEMY_DATABASE_URI` environment variable is found, a default SQLite engine string `sqlite:///data/flight.db` is used to create a local database.
