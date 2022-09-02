@@ -1,4 +1,4 @@
-.PHONY: clean-data, clean-model clean-all
+.PHONY: clean-data, clean-model clean-all clean-docker
 clean-data:
 	rm -f data/download/flight_data.csv
 	rm -f data/clean/clean_data.csv
@@ -15,6 +15,11 @@ clean-data:
 clean-model:
 	rm -f models/encoder.joblib
 	rm -f models/model.joblib
+
+clean-docker:
+	docker stop $(shell docker ps -aq)
+	docker rm $(shell docker ps -aq)
+	docker rmi $(shell docker images -q)
 
 clean-all: clean-data clean-model
 
